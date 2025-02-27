@@ -8,7 +8,6 @@ from sentry_sdk.integrations.logging import LoggingIntegration
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
 
 sentry_sdk.init(
@@ -33,7 +32,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'oc_lettings_site.apps.OCLettingsSiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,12 +55,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'oc_lettings_site', 'templates'),
+            os.path.join(BASE_DIR, 'profiles', 'templates'),
+            os.path.join(BASE_DIR, 'lettings', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,3 +131,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

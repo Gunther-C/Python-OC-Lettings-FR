@@ -2,8 +2,6 @@ import os
 import sys
 import subprocess
 import webbrowser
-# from config_sentry import conf_sentry
-
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
@@ -35,5 +33,4 @@ def debug():
 
 
 if __name__ == '__main__':
-    # conf_sentry()
     main()
