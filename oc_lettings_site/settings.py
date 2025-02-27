@@ -1,10 +1,23 @@
 import os
-
 from pathlib import Path
+import sentry_sdk
+import logging
+from sentry_sdk.integrations.logging import LoggingIntegration
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
+
+sentry_sdk.init(
+    dsn="https://90c4d57e33b2e15ca4a1075f383d638e@o4508847959113728.ingest.de.sentry.io/4508847966453840",
+    integrations=[sentry_logging],
+    send_default_pii=True,
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -19,7 +32,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'oc_lettings_site.apps.OCLettingsSiteConfig',
     'django.contrib.admin',
@@ -28,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lettings.apps.LettingsConfig',
+    'profiles.apps.ProfilesConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -41,6 +56,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TEMPLATES = [
     {
