@@ -11,12 +11,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
 
 sentry_sdk.init(
-    dsn="https://90c4d57e33b2e15ca4a1075f383d638e@o4508847959113728.ingest.de.sentry.io/4508847966453840",
+    dsn="https://cc78634eb4a3e90b6f8d929c81a06827@o4508847959113728.ingest.de.sentry.io/4508883017334864",
     integrations=[sentry_logging],
     send_default_pii=True,
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
 )
+logging.basicConfig(level=logging.INFO)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,9 +27,10 @@ sentry_sdk.init(
 SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,11 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lettings.apps.LettingsConfig',
     'profiles.apps.ProfilesConfig',
+    'oc_lettings_site',
 ]
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -53,7 +59,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'oc_lettings_site.urls'
-
 
 TEMPLATES = [
     {
@@ -127,8 +132,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+"""
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+"""

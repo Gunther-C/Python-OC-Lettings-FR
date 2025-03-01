@@ -1,9 +1,7 @@
 from django.shortcuts import render
 import logging
 
-
 logger = logging.getLogger(__name__)
-
 
 def index(request):
     """
@@ -40,4 +38,5 @@ def error_500(request):
     Returns:
         HttpResponse: The rendered 500 error page.
     """
+    logger.error(f"Error 500:", exc_info=True)
     return render(request, 'oc_lettings_site/500.html', status=500)

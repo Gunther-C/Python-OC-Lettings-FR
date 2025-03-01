@@ -2,6 +2,7 @@ import os
 import sys
 import subprocess
 import webbrowser
+from scripts.css_cleaner import remove_css_urls, clean_css
 
 
 def main():
@@ -41,4 +42,12 @@ def debug():
 
 
 if __name__ == '__main__':
-    debug()
+    """css_file = 'static/css/styles.css'
+    assets_dir = 'static/assets/img/'
+    remove_css_urls(css_file, assets_dir)"""
+
+    """html_dirs = ['oc_lettings_site/templates/oc_lettings_site', 'profiles/templates/profiles', 'lettings/templates/lettings']
+    css_file = 'static/css/styles.css'
+    clean_css(css_file, html_dirs)"""
+
+    main()
