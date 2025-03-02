@@ -30,7 +30,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t guntherChev/oc_lettings:latest .
+        docker build -t GuntherChev/oc_lettings:latest .
 
     # Nouvelle étape : Connexion à Docker Hub
     - name: Log in to Docker Hub
@@ -38,4 +38,4 @@ jobs:
 
     # Nouvelle étape : Pousser l'image Docker vers Docker Hub
     - name: Push Docker image
-      run: docker push guntherChev/oc_lettings:latest
+      run: docker push GuntherChev/oc_lettings:latest
