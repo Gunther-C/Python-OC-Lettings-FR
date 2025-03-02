@@ -3,4 +3,3 @@
 .venv/
 flake8_rapport/
 .idea/
-staticfiles/

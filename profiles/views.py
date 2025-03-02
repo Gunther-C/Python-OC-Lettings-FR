@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Profile
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -13,6 +16,7 @@ def index(request):
     """
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
+    logger.info("Fetched all profiles.")
     return render(request, 'profiles/index.html', context)
 
 
@@ -26,6 +30,10 @@ def profile(request, username):
     Returns:
         HttpResponse: The rendered profile detail view.
     """
-    profile = Profile.objects.get(user__username=username)
-    context = {'profile': profile}
-    return render(request, 'profiles/profile.html', context)
+    try:
+        profile = Profile.objects.get(user__username=username)
+        logger.info(f"Successfully fetched profile for user: {username}")
+        context = {'profile': profile}
+        return render(request, 'profiles/profile.html', context)
+    except Profile.DoesNotExist:
+        logger.error(f"Profile for user {username} does not exist.", exc_info=True)

@@ -3,6 +3,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def index(request):
     """
     Renders the index view of the oc_lettings_site.
@@ -12,6 +13,7 @@ def index(request):
     Returns:
         HttpResponse: The rendered index view.
     """
+    logger.info("Enter index")
     return render(request, 'oc_lettings_site/index.html')
 
 
@@ -38,5 +40,5 @@ def error_500(request):
     Returns:
         HttpResponse: The rendered 500 error page.
     """
-    logger.error(f"Error 500:", exc_info=True)
+    logger.error("Error 500:", exc_info=True)
     return render(request, 'oc_lettings_site/500.html', status=500)

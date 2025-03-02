@@ -2,7 +2,9 @@ import os
 import sys
 import subprocess
 import webbrowser
-from scripts.css_cleaner import remove_css_urls, clean_css
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def main():
@@ -15,6 +17,7 @@ def main():
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
+        logger.error("Impossible d'importer Django. Couldn't import Django.", exc_info=True)
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
             "available on your PYTHONPATH environment variable? Did you "
@@ -42,12 +45,4 @@ def debug():
 
 
 if __name__ == '__main__':
-    """css_file = 'static/css/styles.css'
-    assets_dir = 'static/assets/img/'
-    remove_css_urls(css_file, assets_dir)"""
-
-    """html_dirs = ['oc_lettings_site/templates/oc_lettings_site', 'profiles/templates/profiles', 'lettings/templates/lettings']
-    css_file = 'static/css/styles.css'
-    clean_css(css_file, html_dirs)"""
-
-    main()
+    debug()
