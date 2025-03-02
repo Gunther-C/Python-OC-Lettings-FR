@@ -3,7 +3,7 @@ name: CI/CD Pipeline test for Development
 on:
   push:
     branches:
-      - develop_OC_Structure_pipeline
+      - master
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t guntherchev/oc_lettings:latest .
+        docker build -t guntherchev/oc_lettings:deployment .
 
     # Nouvelle étape : Connexion à Docker Hub
     - name: Log in to Docker Hub
@@ -38,4 +38,4 @@ jobs:
 
     # Nouvelle étape : Pousser l'image Docker vers Docker Hub
     - name: Push Docker image
-      run: docker push guntherchev/oc_lettings:latest
+      run: docker push guntherchev/oc_lettings:deployment
