@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Développement &#8212; Documentation Python-OC-lettings-FR 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=05dadb3a"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=e6b791cb"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="oc_lettings_site" href="modules/oc_lettings_site.html" />
+    <link rel="prev" title="Utilisation" href="utilisation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="developpement">
+<h1>Développement<a class="headerlink" href="#developpement" title="Lien vers cette rubrique">¶</a></h1>
+<p>Informations sur le développement de Python-OC-lettings-FR.</p>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique">¶</a></h2>
+<ul class="simple">
+<li><p>Python 3.x</p></li>
+<li><p>pip</p></li>
+<li><p>Un environnement virtuel (recommandé)</p></li>
+</ul>
+</section>
+<section id="installer-les-dependances">
+<h2>Installer les dépendances<a class="headerlink" href="#installer-les-dependances" title="Lien vers cette rubrique">¶</a></h2>
+<p>Pour installer les dépendances nécessaires au développement, exécutez la commande suivante :</p>
+<blockquote>
+<div><p>pip install -r requirements.txt</p>
+</div></blockquote>
+</section>
+<section id="lancer-les-tests">
+<h2>Lancer les tests<a class="headerlink" href="#lancer-les-tests" title="Lien vers cette rubrique">¶</a></h2>
+<p>Pour exécuter les tests unitaires et vérifier que tout fonctionne correctement, utilisez la commande suivante :</p>
+<blockquote>
+<div><p>pytest</p>
+</div></blockquote>
+<p>Test de couverture :</p>
+<blockquote>
+<div><p>coverage run -m pytest</p>
+<p>coverage report</p>
+</div></blockquote>
+</section>
+<section id="creer-un-rapport-flake8">
+<h2>Créer un rapport Flake8<a class="headerlink" href="#creer-un-rapport-flake8" title="Lien vers cette rubrique">¶</a></h2>
+<p>Pour créer un rapport Flake8,
+remplacez la fonction <cite>main</cite> par la fonction <cite>debug</cite> dans le fichier <cite>manage.py</cite> (Lancez).</p>
+<blockquote>
+<div><p>python manage.py</p>
+</div></blockquote>
+<p><cite>Cela va générer un rapport HTML dans votre navigateur.</cite></p>
+</section>
+<section id="bonnes-pratiques">
+<h2>Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Lien vers cette rubrique">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Convention de nommage</strong> : Utilisez des noms de variables et de fonctions explicites.</p></li>
+<li><p><strong>Commentaire et documentation</strong> : Documentez votre code avec des commentaires clairs et précis.</p></li>
+<li><p><strong>Revue de code</strong> : Effectuez des revues de code régulières pour maintenir la qualité du code.</p></li>
+</ul>
+</section>
+<section id="contribuer-au-projet">
+<h2>Contribuer au projet<a class="headerlink" href="#contribuer-au-projet" title="Lien vers cette rubrique">¶</a></h2>
+<p>Si vous souhaitez contribuer au projet, veuillez suivre les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p>Fork le dépôt GitHub.</p></li>
+<li><dl class="simple">
+<dt>Clonez votre fork localement :</dt><dd><p>git clone <a class="reference external" href="https://github.com/votre-utilisateur/Python-OC-lettings-FR.git">https://github.com/votre-utilisateur/Python-OC-lettings-FR.git</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Créez une branche pour votre fonctionnalité ou correction :</dt><dd><p>git checkout -b ma-nouvelle-fonctionnalite</p>
+</dd>
+</dl>
+</li>
+<li><p>Développez votre fonctionnalité et ajoutez des tests.</p></li>
+<li><dl class="simple">
+<dt>Poussez vos modifications et créez une Pull Request :</dt><dd><p>git push origin ma-nouvelle-fonctionnalite</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Merci de suivre les directives de contribution et de respecter les conventions de codage du projet.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python-OC-lettings-FR</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Développement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installer-les-dependances">Installer les dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lancer-les-tests">Lancer les tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creer-un-rapport-flake8">Créer un rapport Flake8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bonnes-pratiques">Bonnes pratiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribuer-au-projet">Contribuer au projet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/oc_lettings_site.html">oc_lettings_site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/profiles.html">profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/lettings.html">lettings</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="utilisation.html" title="Chapitre précédent">Utilisation</a></li>
+      <li>Next: <a href="modules/oc_lettings_site.html" title="Chapitre suivant">oc_lettings_site</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Gunther.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/development.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
