@@ -10,5 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+CMD ["waitress-serve", "--port=8000", "oc_lettings_site.wsgi:application"]
