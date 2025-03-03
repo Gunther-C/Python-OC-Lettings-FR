@@ -3,7 +3,7 @@ name: CI/CD Pipeline test for reStructuredText
 on:
   push:
     branches:
-      - master
+      - develop_OC_Doc
 
 jobs:
   build:
