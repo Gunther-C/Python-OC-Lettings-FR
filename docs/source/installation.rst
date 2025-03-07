@@ -31,6 +31,3 @@ Prérequis
 5. Lancez le serveur de développement :
 
     python manage.py runserver
-
-6. essai déploiements :
-    un
