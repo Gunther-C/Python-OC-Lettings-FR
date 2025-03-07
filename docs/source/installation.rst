@@ -32,4 +32,5 @@ Prérequis
 
     python manage.py runserver
 
-6. essai déploiements
+6. essai déploiements :
+    un
