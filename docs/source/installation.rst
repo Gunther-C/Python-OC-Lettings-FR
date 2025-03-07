@@ -32,4 +32,4 @@ Prérequis
 
     python manage.py runserver
 
-6. essai déploiement
+6. essai déploiements
