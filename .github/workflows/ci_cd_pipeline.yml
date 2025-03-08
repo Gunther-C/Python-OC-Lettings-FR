@@ -1,4 +1,4 @@
-name: CI/CD Pipeline test for reStructuredText
+name: CI/CD Pipeline deployment
 
 on:
   push:

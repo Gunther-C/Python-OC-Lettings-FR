@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 DEBUG = False
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'oc-lettings-deployment-a2c3.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'oc-lettings-master.onrender.com']
 
 
 INSTALLED_APPS = [
