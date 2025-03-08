@@ -32,5 +32,4 @@ Prérequis
 
     python manage.py runserver
 
-plus
 
