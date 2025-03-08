@@ -30,7 +30,7 @@ def main():
 def debug():
     """
     Runs flake8 to generate an HTML report and opens it in the web browser.
-    Exécute flake8 pour générer un rapport HTML et l'ouvre dans le navigateur web.
+    Exécute flake8 pour générer un rapport HTML et l'ouvrir dans le navigateur web.
 
     Args: None
     """
