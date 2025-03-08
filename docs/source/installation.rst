@@ -31,3 +31,6 @@ Prérequis
 5. Lancez le serveur de développement :
 
     python manage.py runserver
+
+plus
+
