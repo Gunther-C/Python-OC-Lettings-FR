@@ -7,12 +7,11 @@ from sentry_sdk.integrations.logging import LoggingIntegration
 
 load_dotenv()
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
-
 
 sentry_sdk.init(
     dsn="https://cc78634eb4a3e90b6f8d929c81a06827@o4508847959113728.ingest.de.sentry.io/4508883017334864",
@@ -26,9 +25,11 @@ logging.basicConfig(level=logging.INFO)
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-
 DEBUG = False
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'oc-lettings-master.onrender.com']
+
+CSRF_TRUSTED_ORIGINS = ['https://oc-lettings-master.onrender.com']
 
 
 INSTALLED_APPS = [
@@ -62,12 +63,7 @@ ROOT_URLCONF = 'oc_lettings_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'oc_lettings_site', 'templates'),
-            os.path.join(BASE_DIR, 'profiles', 'templates'),
-            os.path.join(BASE_DIR, 'lettings', 'templates'),
-        ],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
