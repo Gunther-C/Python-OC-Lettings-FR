@@ -15,7 +15,6 @@ def index(request):
     Returns:
         HttpResponse: The rendered index view.
     """
-    logger.info("Enter index")
     return render(request, 'oc_lettings_site/index.html')
 
 

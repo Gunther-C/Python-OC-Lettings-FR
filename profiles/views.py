@@ -18,7 +18,6 @@ def index(request):
     """
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
-    logger.info("Fetched all profiles.")
     return render(request, 'profiles/index.html', context)
 
 

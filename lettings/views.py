@@ -18,7 +18,6 @@ def index(request):
     """
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
-    logger.info("Fetched all lettings.")
     return render(request, 'lettings/index.html', context)
 
 
