@@ -23,6 +23,9 @@ def forwards_func(apps, schema_editor):
             address=new_address
         )
 
+    # OldAddress.objects.all().delete()
+    # OldLetting.objects.all().delete()
+
 class Migration(migrations.Migration):
     dependencies = [
         ('lettings', '0001_initial'),

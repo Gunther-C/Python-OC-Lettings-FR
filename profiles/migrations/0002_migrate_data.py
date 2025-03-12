@@ -10,6 +10,8 @@ def forwards_func(apps, schema_editor):
             favorite_city=old_profile.favorite_city
         )
 
+    # OldProfile.objects.all().delete()
+
 class Migration(migrations.Migration):
     dependencies = [
         ('profiles', '0001_initial'),
